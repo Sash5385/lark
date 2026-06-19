@@ -817,12 +817,21 @@ function showPage(id, btn) {
   });
   window.scrollTo(0, 0);
 }
-function toggleTheme() {
-  document.body.classList.toggle('light');
-  const l = document.body.classList.contains('light');
-  document.getElementById('ti').textContent = l ? '🌙' : '☀️';
-  document.getElementById('tl').textContent = l ? 'Темна тема' : 'Світла тема';
+function applyTheme(light) {
+  document.body.classList.toggle('light', light);
+  document.getElementById('ti').textContent = light ? '🌙' : '☀️';
+  document.getElementById('tl').textContent = light ? 'Темна тема' : 'Світла тема';
 }
+function toggleTheme() {
+  const light = !document.body.classList.contains('light');
+  localStorage.setItem('theme', light ? 'light' : 'dark');
+  applyTheme(light);
+}
+(function() {
+  const saved = localStorage.getItem('theme');
+  const light = saved ? saved === 'light' : window.matchMedia('(prefers-color-scheme: light)').matches;
+  applyTheme(light);
+}());
 </script>
 </body>
 </html>
