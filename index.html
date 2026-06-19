@@ -286,6 +286,15 @@ footer a{color:var(--txt3);}
 @media(min-width:769px){.mob-nav{display:none;}.mob-wrap{padding:0;}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .card,.stat,.price-box,.loc,.map-card,.staff-card,.car-card,.sched-card,.doc-card,.hero-desktop,.class-card{animation:fadeUp .45s ease both;}
+.slider-wrap{position:relative;border-radius:18px;overflow:hidden;background:var(--bg2);aspect-ratio:16/9;max-height:420px;}
+.slider-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);}
+.slide-img{min-width:100%;height:100%;object-fit:cover;flex-shrink:0;}
+.sl-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);backdrop-filter:blur(6px);border:none;color:#fff;font-size:28px;width:44px;height:44px;border-radius:50%;cursor:pointer;z-index:10;line-height:1;transition:background .2s;}
+.sl-btn:hover{background:rgba(0,0,0,.7);}
+.sl-prev{left:10px;}.sl-next{right:10px;}
+.sl-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:7px;}
+.sl-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:background .2s;border:none;padding:0;}
+.sl-dot.active{background:#fff;}
 </style>
 </head>
 <body>
@@ -414,14 +423,19 @@ footer a{color:var(--txt3);}
           </div>
           <div class="sec">
             <div class="sec-label">Наші фото</div>
-            <div class="gallery-grid">
-              <img class="gimg" onerror="this.style.display='none'" src="https://cool-drive.kiev.ua/wp-content/uploads/2025/05/photo_2025-05-22_06-06-27.jpg" alt="" loading="lazy">
-              <img class="gimg" onerror="this.style.display='none'" src="https://cool-drive.kiev.ua/wp-content/uploads/2025/05/photo_2025-05-22_06-06-37.jpg" alt="" loading="lazy">
-              <img class="gimg" onerror="this.style.display='none'" src="https://cool-drive.kiev.ua/wp-content/uploads/2025/05/photo_2025-05-22_06-19-26.jpg" alt="" loading="lazy">
-              <img class="gimg" onerror="this.style.display='none'" src="https://cool-drive.kiev.ua/wp-content/uploads/2025/05/photo_2025-05-22_06-20-15.jpg" alt="" loading="lazy">
-              <img class="gimg" onerror="this.style.display='none'" src="https://cool-drive.kiev.ua/wp-content/uploads/2025/05/photo_2025-05-22_06-19-45.jpg" alt="" loading="lazy">
-              <img class="gimg" onerror="this.style.display='none'" src="https://cool-drive.kiev.ua/wp-content/uploads/2025/05/photo_2025-05-22_06-20-41.jpg" alt="" loading="lazy">
-              <img class="gimg" onerror="this.style.display='none'" src="https://cool-drive.kiev.ua/wp-content/uploads/2025/05/photo_2025-05-25_20-31-37.jpg" alt="" loading="lazy">
+            <div class="slider-wrap">
+              <div class="slider-track" id="sliderTrack">
+                <img class="slide-img" src="photo1.jpg" onerror="this.parentNode.removeChild(this)" alt="">
+                <img class="slide-img" src="photo2.jpg" onerror="this.parentNode.removeChild(this)" alt="">
+                <img class="slide-img" src="photo3.jpg" onerror="this.parentNode.removeChild(this)" alt="">
+                <img class="slide-img" src="photo4.jpg" onerror="this.parentNode.removeChild(this)" alt="">
+                <img class="slide-img" src="photo5.jpg" onerror="this.parentNode.removeChild(this)" alt="">
+                <img class="slide-img" src="photo6.jpg" onerror="this.parentNode.removeChild(this)" alt="">
+                <img class="slide-img" src="photo7.jpg" onerror="this.parentNode.removeChild(this)" alt="">
+              </div>
+              <button class="sl-btn sl-prev" onclick="slideMove(-1)">‹</button>
+              <button class="sl-btn sl-next" onclick="slideMove(1)">›</button>
+              <div class="sl-dots" id="slDots"></div>
             </div>
           </div>
         </div>
@@ -818,6 +832,35 @@ function showPage(id, btn) {
   });
   window.scrollTo(0, 0);
 }
+let slIdx = 0, slTimer;
+function sliderInit() {
+  const track = document.getElementById('sliderTrack');
+  if (!track) return;
+  const imgs = track.querySelectorAll('.slide-img');
+  if (!imgs.length) return;
+  const dots = document.getElementById('slDots');
+  dots.innerHTML = '';
+  imgs.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'sl-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => slideTo(i);
+    dots.appendChild(d);
+  });
+  slIdx = 0;
+  clearInterval(slTimer);
+  slTimer = setInterval(() => slideMove(1), 4000);
+}
+function slideTo(i) {
+  const track = document.getElementById('sliderTrack');
+  const imgs = track.querySelectorAll('.slide-img');
+  slIdx = (i + imgs.length) % imgs.length;
+  track.style.transform = 'translateX(-' + slIdx * 100 + '%)';
+  document.querySelectorAll('.sl-dot').forEach((d, j) => d.classList.toggle('active', j === slIdx));
+  clearInterval(slTimer);
+  slTimer = setInterval(() => slideMove(1), 4000);
+}
+function slideMove(dir) { slideTo(slIdx + dir); }
+window.addEventListener('load', sliderInit);
 function applyTheme(light) {
   document.body.classList.toggle('light', light);
   document.getElementById('ti').textContent = light ? '🌙' : '☀️';
