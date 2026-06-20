@@ -258,12 +258,22 @@ footer a{color:var(--txt3);}
   .sidebar{display:none!important;}
   .mob-nav{display:block;width:100%;box-sizing:border-box;}
   .main{display:block!important;float:none!important;margin-left:0!important;margin-right:0!important;padding:0!important;max-width:100%!important;width:100%!important;min-width:0;box-sizing:border-box;}
-  .mob-nav{display:block;position:sticky;top:0;z-index:200;background:rgba(12,12,15,0.85);backdrop-filter:blur(20px);
-    border-bottom:1px solid var(--brd);padding:0 12px;}
-  .light .mob-nav{background:rgba(235,235,242,0.88);}
-  .mob-nav-inner{display:flex;flex-wrap:wrap;gap:4px;padding:8px 0;}
-  .mob-nav .nav-btn{flex:1 1 22%;padding:6px 4px;border-radius:8px;font-size:11px;border:none;white-space:nowrap;text-align:center;}
-  .mob-nav .nav-btn.active{background:var(--card);color:var(--blue);border:1px solid rgba(74,158,255,.2);}
+  .mob-nav{display:block;position:sticky;top:0;z-index:200;background:rgba(12,12,15,0.9);backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--brd);padding:6px 8px;}
+  .light .mob-nav{background:rgba(235,235,242,0.92);}
+  .mob-nav-inner{display:flex;gap:4px;padding:0;}
+  .mob-nav .nav-btn{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+    padding:6px 2px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);
+    background:rgba(255,255,255,0.05);color:var(--txt2);white-space:nowrap;
+    position:relative;overflow:hidden;cursor:pointer;font-family:inherit;}
+  .mob-nav .nav-btn::before{content:'';position:absolute;top:0;left:0;right:0;height:45%;
+    background:linear-gradient(to bottom,rgba(255,255,255,0.13) 0%,transparent 100%);pointer-events:none;}
+  .light .mob-nav .nav-btn{border-color:rgba(0,0,0,0.1);background:rgba(0,0,0,0.04);}
+  .mob-nav .nav-btn.active{background:rgba(74,158,255,0.18);border-color:rgba(74,158,255,0.4);color:var(--blue);}
+  .mob-nav .nav-btn.active::before{background:linear-gradient(to bottom,rgba(255,255,255,0.22) 0%,transparent 100%);}
+  .mn-ic{font-size:18px;line-height:1;}
+  .mn-lb{font-size:9px;line-height:1;font-weight:500;letter-spacing:0.2px;}
   .mob-wrap{padding:0 14px 80px;overflow-x:hidden;}
   .hero-desktop{grid-template-columns:1fr;padding:24px;text-align:center;gap:24px;}
   .hero-h1{font-size:26px;}
@@ -337,13 +347,13 @@ footer a{color:var(--txt3);}
 
   <nav class="mob-nav">
     <div class="mob-nav-inner">
-      <button class="nav-btn active" onclick="showPage('home',this)">🏠 Головна</button>
-      <button class="nav-btn" onclick="showPage('school',this)">👥 Школа</button>
-      <button class="nav-btn" onclick="showPage('schedule',this)">📅 Розклад</button>
-      <button class="nav-btn" onclick="showPage('price',this)">💰 Ціна</button>
-      <button class="nav-btn" onclick="showPage('docs',this)">📄 Документи</button>
-      <button class="nav-btn" onclick="showPage('autodrom',this)">🏁 Автодром</button>
-      <button class="nav-btn" onclick="showPage('contacts',this)">📞 Контакти</button>
+      <button class="nav-btn active" onclick="showPage('home',this)"><span class="mn-ic">🏠</span><span class="mn-lb">Головна</span></button>
+      <button class="nav-btn" onclick="showPage('school',this)"><span class="mn-ic">👥</span><span class="mn-lb">Школа</span></button>
+      <button class="nav-btn" onclick="showPage('schedule',this)"><span class="mn-ic">📅</span><span class="mn-lb">Розклад</span></button>
+      <button class="nav-btn" onclick="showPage('price',this)"><span class="mn-ic">💰</span><span class="mn-lb">Ціна</span></button>
+      <button class="nav-btn" onclick="showPage('docs',this)"><span class="mn-ic">📄</span><span class="mn-lb">Документи</span></button>
+      <button class="nav-btn" onclick="showPage('autodrom',this)"><span class="mn-ic">🏁</span><span class="mn-lb">Автодром</span></button>
+      <button class="nav-btn" onclick="showPage('contacts',this)"><span class="mn-ic">📞</span><span class="mn-lb">Контакти</span></button>
     </div>
   </nav>
 
