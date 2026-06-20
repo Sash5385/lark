@@ -243,6 +243,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--txt);tran
 .prices-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
 .two-col{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start;}
 .home-sidebar{position:sticky;top:20px;align-self:start;}
+.mob-only{display:none;}
 footer{text-align:center;padding:24px 0;color:var(--txt3);font-size:12px;border-top:1px solid var(--brd);margin-top:20px;}
 footer a{color:var(--txt3);}
 .class-card{background:var(--card);backdrop-filter:var(--blur);border:1px solid var(--brd);border-radius:18px;
@@ -291,6 +292,8 @@ footer a{color:var(--txt3);}
   .cars-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;}
   .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}
   .prices-row{grid-template-columns:1fr;}
+  .mob-only{display:block;}
+  .desk-only{display:none;}
   .two-col{grid-template-columns:1fr!important;}
   .two-col>*{min-width:0;overflow-x:hidden;}
   .home-sidebar{position:static;}
@@ -430,6 +433,16 @@ footer a{color:var(--txt3);}
             </div>
           </div>
 
+          <div class="sec mob-only">
+            <div class="sec-label">Навчальні класи</div>
+            <div class="g1">
+              <div class="loc" onclick="setMapLocation(document.getElementById('loc-akadem'),'вул. М. Поповича 9, Київ')"><div class="ldot" style="background:var(--blue);box-shadow:0 0 7px var(--blue)"></div><div><div class="ln">М. Академмістечко</div><div class="la">вул. М. Поповича 9</div></div></div>
+              <div class="loc" onclick="setMapLocation(document.getElementById('loc-zhytomyr'),'вул. Львівська 25, Київ')"><div class="ldot" style="background:var(--orange);box-shadow:0 0 7px var(--orange)"></div><div><div class="ln">М. Житомирська</div><div class="la">вул. Львівська 25</div></div></div>
+              <div class="loc" onclick="setMapLocation(document.getElementById('loc-borshagivka'),'вул. Григоровича-Барського 5, Київ')"><div class="ldot" style="background:var(--pink);box-shadow:0 0 7px var(--pink)"></div><div><div class="ln">Борщагівка</div><div class="la">вул. Григоровича-Барського 5</div></div></div>
+              <div class="loc active" onclick="setMapLocation(document.getElementById('loc-svyatoshyn'),'вул. Верховинна 49, Київ')"><div class="ldot" style="background:var(--green);box-shadow:0 0 7px var(--green)"></div><div><div class="ln">Святошино</div><div class="la">вул. Верховинна 49 (автодром)</div></div></div>
+            </div>
+          </div>
+
           <div class="sec">
             <div class="sec-label">Карта місць старту водіння</div>
             <div class="sec-text">Водіння: Житомирська, Академмістечко, Борщагівка, Південна Борщагівка, Софіївська Борщагівка, Боярка, Нивки, Дорогожичі, Оболонь.</div>
@@ -479,7 +492,7 @@ footer a{color:var(--txt3);}
           <footer>© 2026 Автошкола «Жайворонок» · Борщагівка та Житомирська, Київ</footer>
         </div>
         <div class="home-sidebar">
-          <div class="sec">
+          <div class="sec desk-only">
             <div class="sec-label">Навчальні класи</div>
             <div class="g1">
               <div class="loc" id="loc-akadem" onclick="setMapLocation(this,'вул. М. Поповича 9, Київ')"><div class="ldot" style="background:var(--blue);box-shadow:0 0 7px var(--blue)"></div><div><div class="ln">М. Академмістечко</div><div class="la">вул. М. Поповича 9</div></div></div>
