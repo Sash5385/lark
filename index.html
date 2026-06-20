@@ -240,6 +240,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--txt);tran
   border:1px solid rgba(48,209,88,.2);border-radius:16px;padding:16px 18px;
   font-size:13px;color:var(--txt2);line-height:1.7;margin-bottom:12px;}
 .info-box strong{color:var(--green);}
+.prices-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
 .two-col{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start;}
 .home-sidebar{position:sticky;top:20px;align-self:start;}
 footer{text-align:center;padding:24px 0;color:var(--txt3);font-size:12px;border-top:1px solid var(--brd);margin-top:20px;}
@@ -289,6 +290,9 @@ footer a{color:var(--txt3);}
   .staff-card{padding:10px;}
   .cars-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;}
   .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}
+  .prices-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:4px;gap:12px;}
+  .prices-row::-webkit-scrollbar{display:none;}
+  .prices-row .price-box{min-width:78%;scroll-snap-align:start;flex-shrink:0;}
   .two-col{grid-template-columns:1fr!important;}
   .two-col>*{min-width:0;overflow-x:hidden;}
   .home-sidebar{position:static;}
@@ -403,7 +407,7 @@ footer a{color:var(--txt3);}
           </div>
 
           <div class="sec">
-            <div class="g3">
+            <div class="prices-row">
               <div class="price-box" style="background:linear-gradient(135deg,rgba(74,158,255,.12),rgba(191,90,242,.07));border:1px solid rgba(74,158,255,.2);">
                 <div class="pbadge" style="background:rgba(74,158,255,.15);color:var(--blue)">Теорія</div>
                 <div class="pbig">4000<span class="punit"> ₴</span></div>
