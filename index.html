@@ -241,6 +241,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--txt);tran
   font-size:13px;color:var(--txt2);line-height:1.7;margin-bottom:12px;}
 .info-box strong{color:var(--green);}
 .two-col{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start;}
+.home-sidebar{position:sticky;top:20px;align-self:start;}
 footer{text-align:center;padding:24px 0;color:var(--txt3);font-size:12px;border-top:1px solid var(--brd);margin-top:20px;}
 footer a{color:var(--txt3);}
 .class-card{background:var(--card);backdrop-filter:var(--blur);border:1px solid var(--brd);border-radius:18px;
@@ -290,6 +291,7 @@ footer a{color:var(--txt3);}
   .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}
   .two-col{grid-template-columns:1fr!important;}
   .two-col>*{min-width:0;overflow-x:hidden;}
+  .home-sidebar{position:static;}
   .form-grid{grid-template-columns:1fr;}
   .toggle{top:auto;bottom:16px;right:14px;padding:6px 12px;font-size:11px;}
   .map-wrap{height:260px;width:100%;max-width:100%;}
@@ -362,63 +364,63 @@ footer a{color:var(--txt3);}
     <!-- ════ HOME ════ -->
     <div id="page-home" class="page active">
     <div class="mob-wrap">
-      <div class="hero-desktop">
-        <div class="hero-left">
-          <div class="hero-tag"><div class="hero-dot"></div>В даний час йде набір в групи категорії «B»!</div>
-          <h1 class="hero-h1">Автошкола<br><span>«Жайворонок»</span></h1>
-          <p class="hero-sub">50 років успішної роботи · 17 000 випускників<br>Власний автодром · Навчання на механіці/автоматі<br>Найдоступніші ціни в місті Київ</p>
-          <div class="hero-btns">
-            <button class="btn-p" onclick="showPage('contacts',null)">Записатись →</button>
-            <button class="btn-s" onclick="showPage('school',null)">Про школу</button>
-          </div>
-        </div>
-        <div class="hero-right">
-          <div class="hero-emblem"><img src="logo.png" alt="Автошкола Жайворонок" style="width:100%;height:auto;display:block;"></div>
-        </div>
-      </div>
-
-      <div class="stats-row">
-        <div class="stat"><div class="sn">50</div><div class="sl">Років роботи</div></div>
-        <div class="stat"><div class="sn" style="background:linear-gradient(135deg,var(--orange),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">17K</div><div class="sl">Випускників</div></div>
-        <div class="stat"><div class="sn" style="background:linear-gradient(135deg,var(--green),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">40</div><div class="sl">Годин водіння</div></div>
-        <div class="stat"><div class="sn" style="background:linear-gradient(135deg,var(--yellow),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">4</div><div class="sl">Навчальні класи</div></div>
-      </div>
-
-      <div class="sec">
-        <div class="sec-label">Чому автошкола «Жайворонок»?</div>
-        <div class="g4">
-          <div class="card c-blue"><div class="ci">🏁</div><div class="ct">Власний автодром</div><div class="cs">Практика без черг і очікувань</div></div>
-          <div class="card c-orange"><div class="ci">⚙️</div><div class="ct">Механіка / Автомат</div><div class="cs">Навчання на вибір</div></div>
-          <div class="card c-green"><div class="ci">🛡️</div><div class="ct">Протиаварійна підготовка</div><div class="cs">Власний центр підготовки</div></div>
-          <div class="card c-purple"><div class="ci">💻</div><div class="ct">Клас та онлайн</div><div class="cs">Заняття в обох форматах</div></div>
-          <div class="card c-pink"><div class="ci">🏥</div><div class="ct">Медкомісія в автошколі</div><div class="cs">Лікарі приїжджають на місце</div></div>
-          <div class="card c-yellow"><div class="ci">⏰</div><div class="ct">Ранкові/вечірні/вихідні</div><div class="cs">Зручний графік для кожного</div></div>
-          <div class="card c-red"><div class="ci">🎓</div><div class="ct">50 років роботи</div><div class="cs">Перевірений досвід з 1974</div></div>
-          <div class="card c-blue"><div class="ci">💲</div><div class="ct">Найдоступніші ціни</div><div class="cs">У місті Київ, без доплат</div></div>
-        </div>
-      </div>
-
-      <div class="sec">
-        <div class="g2">
-          <div class="price-box" style="background:linear-gradient(135deg,rgba(74,158,255,.12),rgba(191,90,242,.07));border:1px solid rgba(74,158,255,.2);">
-            <div class="pbadge" style="background:rgba(74,158,255,.15);color:var(--blue)">Теорія</div>
-            <div class="pbig">4000<span class="punit"> ₴</span></div>
-            <div class="pdesc">Теорія в класі та онлайн</div>
-            <div class="pdiv"></div>
-            <ul class="pinc"><li>Додаткова знижка для ЗСУ</li><li>Знижка для 2 осіб з родини</li></ul>
-          </div>
-          <div class="price-box" style="background:linear-gradient(135deg,rgba(255,107,53,.12),rgba(255,77,141,.07));border:1px solid rgba(255,107,53,.2);">
-            <div class="pbadge" style="background:rgba(255,107,53,.15);color:var(--orange)">Водіння</div>
-            <div class="pbig">850<span class="punit"> ₴</span></div>
-            <div class="pdesc">Урок 60 хвилин</div>
-            <div class="pdiv"></div>
-            <ul class="pinc"><li>Бензин, мастило, ТО авто</li><li>Робота інструктора + документи ТСЦ МВС</li></ul>
-          </div>
-        </div>
-      </div>
-
       <div class="two-col">
         <div>
+          <div class="hero-desktop">
+            <div class="hero-left">
+              <div class="hero-tag"><div class="hero-dot"></div>В даний час йде набір в групи категорії «B»!</div>
+              <h1 class="hero-h1">Автошкола<br><span>«Жайворонок»</span></h1>
+              <p class="hero-sub">50 років успішної роботи · 17 000 випускників<br>Власний автодром · Навчання на механіці/автоматі<br>Найдоступніші ціни в місті Київ</p>
+              <div class="hero-btns">
+                <button class="btn-p" onclick="showPage('contacts',null)">Записатись →</button>
+                <button class="btn-s" onclick="showPage('school',null)">Про школу</button>
+              </div>
+            </div>
+            <div class="hero-right">
+              <div class="hero-emblem"><img src="logo.png" alt="Автошкола Жайворонок" style="width:100%;height:auto;display:block;"></div>
+            </div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat"><div class="sn">50</div><div class="sl">Років роботи</div></div>
+            <div class="stat"><div class="sn" style="background:linear-gradient(135deg,var(--orange),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">17K</div><div class="sl">Випускників</div></div>
+            <div class="stat"><div class="sn" style="background:linear-gradient(135deg,var(--green),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">40</div><div class="sl">Годин водіння</div></div>
+            <div class="stat"><div class="sn" style="background:linear-gradient(135deg,var(--yellow),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">4</div><div class="sl">Навчальні класи</div></div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-label">Чому автошкола «Жайворонок»?</div>
+            <div class="g4">
+              <div class="card c-blue"><div class="ci">🏁</div><div class="ct">Власний автодром</div><div class="cs">Практика без черг і очікувань</div></div>
+              <div class="card c-orange"><div class="ci">⚙️</div><div class="ct">Механіка / Автомат</div><div class="cs">Навчання на вибір</div></div>
+              <div class="card c-green"><div class="ci">🛡️</div><div class="ct">Протиаварійна підготовка</div><div class="cs">Власний центр підготовки</div></div>
+              <div class="card c-purple"><div class="ci">💻</div><div class="ct">Клас та онлайн</div><div class="cs">Заняття в обох форматах</div></div>
+              <div class="card c-pink"><div class="ci">🏥</div><div class="ct">Медкомісія в автошколі</div><div class="cs">Лікарі приїжджають на місце</div></div>
+              <div class="card c-yellow"><div class="ci">⏰</div><div class="ct">Ранкові/вечірні/вихідні</div><div class="cs">Зручний графік для кожного</div></div>
+              <div class="card c-red"><div class="ci">🎓</div><div class="ct">50 років роботи</div><div class="cs">Перевірений досвід з 1974</div></div>
+              <div class="card c-blue"><div class="ci">💲</div><div class="ct">Найдоступніші ціни</div><div class="cs">У місті Київ, без доплат</div></div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="g2">
+              <div class="price-box" style="background:linear-gradient(135deg,rgba(74,158,255,.12),rgba(191,90,242,.07));border:1px solid rgba(74,158,255,.2);">
+                <div class="pbadge" style="background:rgba(74,158,255,.15);color:var(--blue)">Теорія</div>
+                <div class="pbig">4000<span class="punit"> ₴</span></div>
+                <div class="pdesc">Теорія в класі та онлайн</div>
+                <div class="pdiv"></div>
+                <ul class="pinc"><li>Додаткова знижка для ЗСУ</li><li>Знижка для 2 осіб з родини</li></ul>
+              </div>
+              <div class="price-box" style="background:linear-gradient(135deg,rgba(255,107,53,.12),rgba(255,77,141,.07));border:1px solid rgba(255,107,53,.2);">
+                <div class="pbadge" style="background:rgba(255,107,53,.15);color:var(--orange)">Водіння</div>
+                <div class="pbig">850<span class="punit"> ₴</span></div>
+                <div class="pdesc">Урок 60 хвилин</div>
+                <div class="pdiv"></div>
+                <ul class="pinc"><li>Бензин, мастило, ТО авто</li><li>Робота інструктора + документи ТСЦ МВС</li></ul>
+              </div>
+            </div>
+          </div>
+
           <div class="sec">
             <div class="sec-label">Карта місць старту водіння</div>
             <div class="sec-text">Водіння: Житомирська, Академмістечко, Борщагівка, Південна Борщагівка, Софіївська Борщагівка, Боярка, Нивки, Дорогожичі, Оболонь.</div>
@@ -436,6 +438,7 @@ footer a{color:var(--txt3);}
               <div style="padding:0 18px 16px;font-size:11px;color:var(--txt3)">👆 Натисніть на клас у списку праворуч, щоб показати його на карті</div>
             </div>
           </div>
+
           <div class="sec">
             <div class="sec-label">Наші фото</div>
             <div class="slider-wrap">
@@ -455,8 +458,18 @@ footer a{color:var(--txt3);}
               <div class="sl-dots" id="slDots"></div>
             </div>
           </div>
+
+          <div class="sec">
+            <div class="sec-title">Автошкола «Жайворонок» — ваш надійний вчитель водінню на київських дорогах</div>
+            <div class="sec-text">Автошкола розташована в Святошинському районі Києва, між метро «Житомирська» і «Академмістечко». Завдяки розташуванню курси близькі мешканцям Борщагівки, Біличів, Новобіличів та житлового масиву Чайка.</div>
+            <div class="sec-text">За 50 років успішної роботи з наших стін вийшло 17 000 водіїв, за яких не соромно. На відміну від більшості водійських курсів, де вчать лише складати іспити, ми навчаємо керувати автомобілем і уникати аварійних ситуацій на дорозі — для цього в нашій школі діє центр протиаварійної підготовки.</div>
+            <div class="sec-text">У нашій автошколі ви отримаєте 40 годин водіння — практика, необхідна кожному починаючому водієві. Власний автодром дозволяє відпрацьовувати навички паркування, руху заднім ходом і руху під гору без черг та поспіху.</div>
+            <div class="sec-text" style="font-weight:600;color:var(--txt)">Ми навчаємо водіїв, з якими нам їздити по одній дорозі!</div>
+          </div>
+
+          <footer>© 2026 Автошкола «Жайворонок» · Борщагівка та Житомирська, Київ</footer>
         </div>
-        <div>
+        <div class="home-sidebar">
           <div class="sec">
             <div class="sec-label">Навчальні класи</div>
             <div class="g1">
@@ -503,16 +516,6 @@ footer a{color:var(--txt3);}
           </div>
         </div>
       </div>
-
-      <div class="sec">
-        <div class="sec-title">Автошкола «Жайворонок» — ваш надійний вчитель водінню на київських дорогах</div>
-        <div class="sec-text">Автошкола розташована в Святошинському районі Києва, між метро «Житомирська» і «Академмістечко». Завдяки розташуванню курси близькі мешканцям Борщагівки, Біличів, Новобіличів та житлового масиву Чайка.</div>
-        <div class="sec-text">За 50 років успішної роботи з наших стін вийшло 17 000 водіїв, за яких не соромно. На відміну від більшості водійських курсів, де вчать лише складати іспити, ми навчаємо керувати автомобілем і уникати аварійних ситуацій на дорозі — для цього в нашій школі діє центр протиаварійної підготовки.</div>
-        <div class="sec-text">У нашій автошколі ви отримаєте 40 годин водіння — практика, необхідна кожному починаючому водієві. Власний автодром дозволяє відпрацьовувати навички паркування, руху заднім ходом і руху під гору без черг та поспіху.</div>
-        <div class="sec-text" style="font-weight:600;color:var(--txt)">Ми навчаємо водіїв, з якими нам їздити по одній дорозі!</div>
-      </div>
-
-      <footer>© 2026 Автошкола «Жайворонок» · Борщагівка та Житомирська, Київ</footer>
     </div>
     </div>
 
